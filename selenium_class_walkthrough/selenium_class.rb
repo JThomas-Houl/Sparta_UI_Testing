@@ -38,21 +38,23 @@ class SeleniumQaToolsForm
     end
 
     def select_link_by_title(link_title)
-        @chrome_driver.find_element(:title, link_title).click
+        @chrome_driver.find_element(:tag_name, link_title).click
         sleep 5
     end
 
     def get_first_name_text
         puts @chrome_driver.find_element(:name, FIRST_NAME_FIELD_NAME)['value']
     end
-
+    
+    def get_input_continent_field # done with help still need to full understand
+        dropdown_list = @chrome_driver.find_element(id: 'continents')
+        options = dropdown_list.find_elements(tag_name: 'option')
+        options.each { |option| option.click if option.text == 'Europe' }
+        sleep 4
+    end 
 end 
 
+
+
+
 form = SeleniumQaToolsForm.new
-form.visit_practice_form
-# form.input_firstname_field('jeff')
-# form.input_lastname_field('thomas')
-# form.input_date_field('yyyyyy')
-# form.input_date_field('yyyyyy')
-# form.button_selector_using_button_id('tool-0')
-form.select_link_by_title('Automation Practice Form')
