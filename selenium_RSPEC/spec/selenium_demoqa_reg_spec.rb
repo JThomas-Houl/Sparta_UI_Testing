@@ -17,6 +17,8 @@ describe 'testing the demoqa registration page' do
     @fake_password = gen_faker_data.faker_password
     @fake_email = gen_faker_data.faker_email
     @fake_about_me = gen_faker_data.faker_about_myself_vforvendeter_quote
+    REGISTRATION_CONFIRMATION = 'piereg_message' #class
+    
   end
 
   context 'positive paths for the registration form and register' do
@@ -67,7 +69,6 @@ describe 'testing the demoqa registration page' do
 
     it 'should accept a valid phone number' do
       @driver.set_phone_number_field(@fake_phone_number)
-      expect(@driver.get_phone_number_field_value.length).to eq 11
       expect(@driver.get_phone_number_field_value).to eq @fake_phone_number
     end
 
@@ -87,14 +88,14 @@ describe 'testing the demoqa registration page' do
     end
 
     it 'should accept a password' do
-        @driver.set_password_field('thisIsIT&')
-        expect(@driver.get_password_value).to eq 'thisIsIT&'
+        @driver.set_password_field(@fake_password)
+        expect(@driver.get_password_value).to eq @fake_password
     end
 
     it 'should accept a password confirmation' do
-        @driver.set_confirmation_password_field('thisIsIT&')
+        @driver.set_confirmation_password_field(@fake_password)
 
-        expect(@driver.get_confirmation_password_value).to eq 'thisIsIT&'
+        expect(@driver.get_confirmation_password_value).to eq @fake_password
         expect(@driver.get_confirmation_password_value).to eq @driver.get_password_value
     end
 

@@ -29,8 +29,8 @@ class RandomFormData
     end
     
     def faker_phone_number
-        Faker::Config.locale = 'en'
-        Faker::PhoneNumber.phone_number
+        num = Faker::Number.number(10)
+        '0' + num
     end
     
     def faker_about_myself_vforvendeter_quote
@@ -38,7 +38,7 @@ class RandomFormData
     end
     
     def faker_password
-        Faker::Internet.password 
+        Faker::Internet.password(8)
     end
 
 end
