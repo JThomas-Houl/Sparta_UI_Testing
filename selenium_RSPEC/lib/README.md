@@ -22,7 +22,7 @@ Instantiate the Superclass and run the `random_form_data_service` in your code `
 
 ## Test
 
-To run the rspec tests simply run `rspec` from the root of the project:-
+To run the rspec tests simply run `rspec` command from the root of the project in terminal:-
 
 ```bash
 rspec
