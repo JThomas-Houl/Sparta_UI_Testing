@@ -1,8 +1,7 @@
 require 'capybara/dsl'
 require_relative './base/bbc_base'
 
-
-class BbcSignin 
+class BbcSignin < BbcBase
 
     include Capybara::DSL
 

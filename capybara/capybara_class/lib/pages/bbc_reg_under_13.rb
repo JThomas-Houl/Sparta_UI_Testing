@@ -1,6 +1,8 @@
 require 'capybara/dsl'
+require 'faker'
 require_relative './bbc_homepage'
 require_relative './base/bbc_base'
+
 
 class BbcRegUnder13 < BbcBase
     include Capybara::DSL

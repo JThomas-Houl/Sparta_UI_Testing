@@ -34,6 +34,13 @@ class BbcBase
     def faker_random_email_gen
         Faker::Internet.email
     end
-        
-    
+
+    def faker_random_username_gen
+        Faker::Internet.user_name
+    end
+
+    def faker_random_password_gen
+        Faker::Internet.password(8)
+    end
+   
 end
