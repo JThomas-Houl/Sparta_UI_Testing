@@ -1,4 +1,5 @@
 require 'capybara/dsl'
+require 'faker'
 
 
 class BbcBase
@@ -28,6 +29,10 @@ class BbcBase
         find(SIGN_IN_LIKE_ID).click
         click_link(REG_LINK)
         click_link(OVER_13_LINK)
+    end
+
+    def faker_random_email_gen
+        Faker::Internet.email
     end
         
     
