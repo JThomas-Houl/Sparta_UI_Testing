@@ -1,6 +1,7 @@
 require 'capybara/dsl'
+require_relative './base/bbc_base'
 
-class BbcHomepage
+class BbcHomepage < BbcBase
 
     include Capybara::DSL
 
